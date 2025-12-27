@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sparepart extends Model
 {
-    //
+ protected $fillable = [
+  'category_id','supplier_id','code','name','unit',
+  'purchase_price','sell_price','stock','min_stock','description'
+];
+
+public function category(){ return $this->belongsTo(Category::class); }
+public function supplier(){ return $this->belongsTo(Supplier::class); }
 }
