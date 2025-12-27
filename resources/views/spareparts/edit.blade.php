@@ -11,12 +11,14 @@
       <div class="row">
         <div class="col-md-4 form-group">
           <label>Kode</label>
-          <input type="text" name="code" class="form-control" required value="{{ old('code', $sparepart->code) }}">
+          <input type="text" name="code" class="form-control" required
+                 value="{{ old('code', $sparepart->code) }}">
         </div>
 
         <div class="col-md-8 form-group">
           <label>Nama</label>
-          <input type="text" name="name" class="form-control" required value="{{ old('name', $sparepart->name) }}">
+          <input type="text" name="name" class="form-control" required
+                 value="{{ old('name', $sparepart->name) }}">
         </div>
 
         <div class="col-md-4 form-group">
@@ -24,7 +26,9 @@
           <select name="category_id" class="form-control" required>
             <option value="">- pilih -</option>
             @foreach($categories as $c)
-              <option value="{{ $c->id }}" @selected(old('category_id', $sparepart->category_id)==$c->id)>{{ $c->name }}</option>
+              <option value="{{ $c->id }}" @selected(old('category_id', $sparepart->category_id)==$c->id)>
+                {{ $c->name }}
+              </option>
             @endforeach
           </select>
         </div>
@@ -34,37 +38,40 @@
           <select name="supplier_id" class="form-control">
             <option value="">- tidak ada -</option>
             @foreach($suppliers as $s)
-              <option value="{{ $s->id }}" @selected(old('supplier_id', $sparepart->supplier_id)==$s->id)>{{ $s->name }}</option>
+              <option value="{{ $s->id }}" @selected(old('supplier_id', $sparepart->supplier_id)==$s->id)>
+                {{ $s->name }}
+              </option>
             @endforeach
           </select>
         </div>
 
         <div class="col-md-4 form-group">
           <label>Unit</label>
-          <input type="text" name="unit" class="form-control" required value="{{ old('unit', $sparepart->unit) }}">
+          <input type="text" name="unit" class="form-control" required
+                 value="{{ old('unit', $sparepart->unit) }}">
         </div>
 
         <div class="col-md-3 form-group">
           <label>Harga Beli</label>
-          <input type="number" step="0.01" name="purchase_price" class="form-control" required
+          <input type="number" name="purchase_price" class="form-control" min="0" step="0.01"
                  value="{{ old('purchase_price', $sparepart->purchase_price) }}">
         </div>
 
         <div class="col-md-3 form-group">
           <label>Harga Jual</label>
-          <input type="number" step="0.01" name="sell_price" class="form-control" required
+          <input type="number" name="sell_price" class="form-control" min="0" step="0.01"
                  value="{{ old('sell_price', $sparepart->sell_price) }}">
         </div>
 
-        <div class="col-md-2 form-group">
+        <div class="col-md-3 form-group">
           <label>Stok</label>
-          <input type="number" name="stock" class="form-control" required min="0"
+          <input type="number" name="stock" class="form-control" min="0"
                  value="{{ old('stock', $sparepart->stock) }}">
         </div>
 
-        <div class="col-md-2 form-group">
+        <div class="col-md-3 form-group">
           <label>Min Stok</label>
-          <input type="number" name="min_stock" class="form-control" required min="0"
+          <input type="number" name="min_stock" class="form-control" min="0"
                  value="{{ old('min_stock', $sparepart->min_stock) }}">
         </div>
 

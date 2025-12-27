@@ -10,12 +10,22 @@
       <div class="row">
         <div class="col-md-4 form-group">
           <label>Kode</label>
-          <input type="text" name="code" class="form-control" required value="{{ old('code') }}" placeholder="SP-0001">
+          <input type="text"
+                 name="code"
+                 class="form-control"
+                 required
+                 placeholder="SP-0001"
+                 value="{{ old('code') }}">
         </div>
 
         <div class="col-md-8 form-group">
           <label>Nama</label>
-          <input type="text" name="name" class="form-control" required value="{{ old('name') }}">
+          <input type="text"
+                 name="name"
+                 class="form-control"
+                 required
+                 placeholder="Contoh: Oli Mesin 10W-40"
+                 value="{{ old('name') }}">
         </div>
 
         <div class="col-md-4 form-group">
@@ -40,32 +50,63 @@
 
         <div class="col-md-4 form-group">
           <label>Unit</label>
-          <input type="text" name="unit" class="form-control" required value="{{ old('unit','pcs') }}">
+          <input type="text"
+                 name="unit"
+                 class="form-control"
+                 required
+                 placeholder="pcs / botol / set"
+                 value="{{ old('unit','pcs') }}">
         </div>
 
+        {{-- ANGKA: tidak pakai value 0, pakai placeholder --}}
         <div class="col-md-3 form-group">
           <label>Harga Beli</label>
-          <input type="number" step="0.01" name="purchase_price" class="form-control" required value="{{ old('purchase_price',0) }}">
+          <input type="number"
+                 name="purchase_price"
+                 class="form-control"
+                 min="0"
+                 step="0.01"
+                 placeholder="0"
+                 value="{{ old('purchase_price') }}">
         </div>
 
         <div class="col-md-3 form-group">
           <label>Harga Jual</label>
-          <input type="number" step="0.01" name="sell_price" class="form-control" required value="{{ old('sell_price',0) }}">
+          <input type="number"
+                 name="sell_price"
+                 class="form-control"
+                 min="0"
+                 step="0.01"
+                 placeholder="0"
+                 value="{{ old('sell_price') }}">
         </div>
 
-        <div class="col-md-2 form-group">
+        <div class="col-md-3 form-group">
           <label>Stok Awal</label>
-          <input type="number" name="stock" class="form-control" required value="{{ old('stock',0) }}" min="0">
+          <input type="number"
+                 name="stock"
+                 class="form-control"
+                 min="0"
+                 placeholder="0"
+                 value="{{ old('stock') }}">
         </div>
 
-        <div class="col-md-2 form-group">
+        <div class="col-md-3 form-group">
           <label>Min Stok</label>
-          <input type="number" name="min_stock" class="form-control" required value="{{ old('min_stock',0) }}" min="0">
+          <input type="number"
+                 name="min_stock"
+                 class="form-control"
+                 min="0"
+                 placeholder="0"
+                 value="{{ old('min_stock') }}">
         </div>
 
         <div class="col-md-12 form-group">
           <label>Deskripsi</label>
-          <textarea name="description" class="form-control" rows="3">{{ old('description') }}</textarea>
+          <textarea name="description"
+                    class="form-control"
+                    rows="3"
+                    placeholder="Opsional...">{{ old('description') }}</textarea>
         </div>
       </div>
 
