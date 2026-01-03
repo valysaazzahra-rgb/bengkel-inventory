@@ -31,7 +31,7 @@ class StockOutController extends Controller
             'customer_name' => 'nullable|string|max:255',
             'note' => 'nullable|string',
             'items' => 'required|array|min:1',
-            'items.*.sparepart_id' => 'required|exists:spareparts,id',
+            'items.*.sparepart_id' => 'required|exists:spareparts,id|distinct',
             'items.*.qty' => 'required|integer|min:1',
             'items.*.price' => 'required|numeric|min:0',
         ]);
